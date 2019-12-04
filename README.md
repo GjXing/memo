@@ -1,6 +1,6 @@
 # vue-memo
 
-> DEMO在[这里](https://youknowznm.github.io/demos/vue-memo/)。
+> DEMO在[这里](http://106.13.4.214/memo/)。
 
 基于 Vue.js 的记事本应用，实现了以下功能：
   - 增删、编辑笔记
@@ -10,10 +10,10 @@
   - 暂存未确认保存的笔记
   - 支持`文本`和`涂鸦`两种记录方式
     * 文本编辑器支持`Markdown`格式
-    * 涂鸦编辑器（来自我的[另一个项目](https://github.com/youknowznm/paint)）支持`选取颜色`、`撤销`、`重做`、`清除画布`
+    * 涂鸦编辑器（基于canvas的简易画板，支持`选取颜色`、`撤销`、`重做`、`清除画布`
   - 通过`localStorage`对象实现数据的本地持久化
   - 对不同尺寸的桌面端和移动端响应适配
-
+通过配置electron，可以生成桌面端（window，ios都支持）
 ```  
 TODO：
   - 编辑笔记时的输入内容验证
@@ -34,4 +34,11 @@ $ npm i
 $ npm run dev
 
 在 8080 端口查看。
+$ npm run build
+打包 h5项目
+$ npm run electron_dev
+在桌面端启动。
+$ npm run electron_build
+打包生成桌面端配置文件。
+
 ```

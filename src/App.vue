@@ -6,6 +6,7 @@
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand">备忘录-memo</a>
+		  <a class="navbar-img" href="https://github.com/GjXing/memo"><img src="./images/github.png" /></a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"   aria-expanded="false">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
