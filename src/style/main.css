@@ -1,0 +1,509 @@
+[v-cloak] {
+  display: none;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  list-style :none;
+  text-decoration: none;
+}
+body{
+  padding-top :50px;
+  background: url(../images/pixels.png)no-repeat;
+  
+  background-size: 100% 100%;
+  height: 100%;
+}
+#blockquote p{
+    font-size: 14px;
+}
+.dropdown-menua{
+    cursor: pointer !important;
+}
+/*****  main  *****/
+
+#vue-memo{
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 0 4px 0 #e1e1e1;
+  padding: 0;
+  z-index: 1;
+}
+/*****  header  *****/
+
+.navbar{
+  border-radius: 0;
+  margin-bottom: 0;
+  z-index: 1;
+  cursor :default;
+  user-select: none;
+  -moz-user-select :none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+  .navbar-right a{
+      cursor :pointer;
+}
+    .search-box{
+      width :calc(100% - 24px);
+      min-width: 180px;
+      margin :6px 12px;
+}
+@media (min-width: 768px){
+	.navbar .dropdown-toggle:after {
+    top: 13px;
+}
+}
+
+ .navbar .dropdown-toggle{
+    position: relative;
+    padding-right: 45px !important;
+    transition :.2s ease-in-out;
+    
+}
+    .navbar .dropdown-toggle:hover{
+      background :rgb(231, 231, 231) !important;
+}
+    .navbar .dropdown-toggle:after{
+      position :absolute;
+      width :24px;
+      height :24px;
+      top: 13px;
+      right: 18px;
+      background :url("../images/icons/icon-dropdown.png") 0 0 no-repeat;
+      content :' ';
+      opacity :.6;
+}
+      /*@media (min-width 768px)
+        top 13px*/
+
+  .count{
+    border-radius :5px;
+    float :right;
+    margin-top :3px;
+}
+  .current-category .count{
+    float: none;
+    margin :-2px 6px 0 9px;
+}
+
+.memo[data-completed=true] .mark{
+      display: block;
+ 	
+ }
+
+
+   .memo .mark{
+  	display :none;
+    position: absolute;
+    width :24px;
+    height :24px;
+    top: -8px;
+    left: -8px;
+    border-radius :50%;
+    background: #4dabf5 url("../images/icons/icon-done.svg") no-repeat 3px 3px;
+    background-size: 18px 18px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+  }
+    
+
+   .mark:hover{
+     
+   	
+      transform :scale(1.2);
+   	
+   }
+
+
+  .memo-heading{
+  	    position: relative;
+    width: 100%;
+  }
+
+
+   .memo-heading .tools{
+   	      float: right;
+      margin-top: 6px;
+   }
+
+
+     .memo-heading .tools > li{
+     	  width :20px;
+        height :20px;
+        float: left;
+        margin-left: 10px;
+        opacity: .5;
+        transition: opacity .2s ease-in-out;
+     }
+      
+
+        .memo-heading .tools > li:hover{
+        	    cursor :pointer;
+          opacity: 1;
+        }
+      
+
+         .memo-heading .tools > li.edit{
+          background: url("../images/icons/icon-edit.png") no-repeat 0 0;
+         	
+         }
+
+
+         .memo-heading .tools > li.delete{
+          background :url("../images/icons/icon-delete.png") no-repeat 0 0;
+         	
+         }
+
+
+     .memo-heading .title{
+    	 display: inline-block;
+      margin-top: 6px;
+      margin-bottom :6px;
+      padding-bottom :6px;
+      border-bottom :1px solid #bdbdbd;
+      text-overflow :ellipsis;
+      white-space :nowrap;
+      overflow :hidden;
+      max-width: calc(100% - 60px);
+    }
+     
+
+.memo-heading   .memo-info{
+  	  margin :0 auto 12px;
+    color: #757575;
+    font-weight :300;
+  }
+  
+
+  .memo-info .category{
+      float :right;
+    	
+    }
+
+
+ .memo .content{
+  	 border :1px solid rgb(248, 248, 248);
+    bottom :12px;
+    overflow-y :scroll;
+    text-overflow :ellipsis;
+  }
+   
+
+   .memo  .content[data-type=doodle]{
+      overflow: hidden;
+    	
+    }
+
+
+    .content img{
+    	 width: 100%;
+      height: 100%;
+
+    }
+     
+/*****  layers  *****/
+
+.cover-layer{
+	display: none;
+  position: absolute;
+  top :0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  opacity: .5!important;
+  z-index :1035!important;
+}
+  
+
+.editor-layer{
+	 display: none;
+  position :absolute;
+  background-color: #fff;
+  top :50%;
+  left: 50%;
+  margin-left: -142px;
+  margin-top :-142px;
+  padding :10px;
+  border: 1px solid rgb(248, 248, 248);
+  border-radius :3px;
+  box-shadow: 0 0 6px 0 rgb(248, 248, 248);
+  z-index :1036;
+}
+ 
+
+  .editor-top{
+  	   position: relative;
+    margin-bottom :10px;
+    width:100%;
+  }
+ 
+
+    .tools{
+    	  position :absolute;
+      top: 6px;
+      right: 0;
+    }
+    
+
+      .tools> li{
+      	 width: 20px;
+        height :20px;
+        float :left;
+        margin-left :10px;
+        opacity: .5;
+        transition opacity: .2s ease-in-out;
+      }
+       
+
+        .tools> li:hover{
+        	 cursor: pointer;
+          opacity: 1;
+        }
+         
+
+        .tools> li.save{
+          background: url("../images/icons/icon-save.png") no-repeat 0 0;
+        	
+        }
+
+
+        .tools> li.cancel{
+          background: url("../images/icons/icon-cancel.png") no-repeat 0 0;
+        	
+        }
+
+
+    .editor-title{
+      width :calc(100% - 140px)!important;
+    	
+    }
+
+html #edit-doodle .editor-title, html #edit-markdown .editor-title {
+    width: calc(100% - 60px)!important;
+}
+     
+
+
+    .select-category{
+    	  position: absolute!important;
+      right :62px!important;
+      top: 0!important;
+      transition :all .2s ease-in-out!important;
+    }
+    
+
+      .dropdown-menu{
+        min-width: 0;
+      	
+      }
+
+.editor-layer .text-content {
+    width: 262px;
+    height: 262px;
+    font-size: 12px;
+    resize: none;
+}
+  .text-content{
+  	 width :262px;
+    height :262px;
+    font-size :12px;
+    resize: none;
+  }
+   
+
+  .canvas-wrapper{
+  	 position :relative;
+    width: 262px;
+    height :262px;
+    border :1px solid #bdbdbd;
+  }
+   
+
+    /**{
+      cursor: pointer;
+    	
+    }*/
+
+
+    .doodle-controllers{
+    	 position :absolute;
+      top: 6px;
+      right :6px;
+    }
+     
+
+      .doodle-controllers> li{
+      	 float :left;
+        width: 24px;
+        height: 24px;
+        opacity :.5;
+        transition :opacity .2s ease-in-out;
+      }
+       
+
+        .doodle-controllers> li:hover{
+        	  cursor: pointer;
+          opacity :1;
+        }
+        
+
+        .doodle-controllers> li.undo{
+        	   background: url("../images/icons/icon-undo.png") no-repeat 2px 2px;
+          background-size :83.3%;
+        }
+       
+
+        .doodle-controllers> li.redo{
+        	  background: url("../images/icons/icon-redo.png") no-repeat 2px 2px;
+          background-size: 83.3%;
+
+        }
+        
+        .doodle-controllers> li.clear{
+        	          background: url("../images/icons/icon-clear.png") no-repeat 2px 2px;
+          background-size: 83.3%;
+        }
+
+
+    .editor-layer .canvas-wrapper .doodle-colors{
+    	 position :absolute;
+      top: 6px;
+      left: 0;
+      padding :6px;
+    }
+     
+.editor-layer .canvas-wrapper * {
+    cursor: pointer;
+}
+       .doodle-colors> li{
+       	  float: left;
+        width: 16px;
+        height :16px;
+        margin-left :6px;
+        border: 2px solid #222;
+        border-radius :50%;
+        transition: .2s ease-in-out;
+       }
+      
+
+        .doodle-colors> li:hover,
+       .doodle-colors> li.current{
+          box-shadow: 0 0 6px #222;
+        	
+        }
+
+        .doodle-colors> li[data-color=green]{
+          background-color :rgb(248, 248, 248)
+        	
+        }
+
+        .doodle-colors> li[data-color=yellow]{
+          background-color: #f0ad4e;
+        	
+        }
+
+        .doodle-colors> li[data-color=red]{
+          background-color : #d9534f;
+        	
+        }
+
+        .doodle-colors> li[data-color=black]{
+          background-color:#222;
+        	
+        }
+
+        .doodle-colors> li[data-color=white]{
+          background-color: #fff;
+        	
+        }
+
+
+    .doodle-content{
+      cursor: pointer
+    	
+    }
+
+
+
+/*****  reset  *****/
+#memos {
+    min-height: 800px;
+    margin-top: 10px;
+    padding: 0;
+}
+@media (min-width:750px) {
+	#memos {
+    margin-top: 100px;
+}
+}
+
+@media (min-width:850px) {
+	#memos {
+    margin-top: 10px;
+}
+}
+
+
+
+
+  .memo{
+  position: relative;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 9px;
+    background-color: #fff;
+    transition: all .15s ease-in-out;
+  }
+    
+
+.memo-container:hover .mark{
+	display: block;
+	
+}
+  
+.memo-container {
+    padding: 6px;
+    float: left;
+}
+@media (max-width: 500px) {
+	.memo-container{
+    width: 100%!important;
+  	  padding :10px;
+  	
+  }
+  .dropdown-menu {
+  	width: 100%!important;
+  }
+}
+
+@media (min-width 500px) and (max-width 800px) {
+	.memo-container{
+    width: 50%!important;
+  	
+  }
+}
+  
+
+
+
+@media (min-width 800px) and (max-width 1100px) {
+	.memo-container {
+    width: 33.3%!important;
+		
+	}
+
+}
+  
+
+
+@media (min-width: 1200px){
+	.memo-container {
+    width: 25%;
+}
+}
+
+
+

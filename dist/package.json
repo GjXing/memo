@@ -1,0 +1,21 @@
+{
+  "name": "electron-jiaxing-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "electron.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "jiaxing <971762278@qq.com>",
+  "license": "jx-1.0",
+  "devDependencies": {
+    "electron": "^3.0.7"
+  }
+}
