@@ -16,6 +16,6 @@
   "author": "jiaxing <971762278@qq.com>",
   "license": "jx-1.0",
   "devDependencies": {
-    "electron": "^3.0.7"
+    "electron": "^9.1.0"
   }
 }
