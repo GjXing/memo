@@ -37,7 +37,7 @@
     "cross-env": "^1.0.6",
     "css-loader": "^0.28.0",
     "cssnano": "^3.10.0",
-    "electron": "^3.0.12",
+    "electron": "^9.1.0",
     "electron-packager": "^13.0.1",
     "eventsource-polyfill": "^0.9.6",
     "expose-loader": "^0.7.5",
